@@ -14,16 +14,26 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="card">
+        <span id="topFig" class="top-suit"></span>
+        <span id="numberFig" class="number"></span>
+        <span id="bottomFig" class="bottom-suit"></span>
       </div>
+      <button id="superDuperButton" class="buttonClick">
+        Change card
+      </button>
+      <input
+        id="addWidth"
+        class="casillaW"
+        type="text"
+        placeholder="Add width here"
+      />
+      <input
+        id="addHeight"
+        class="casillaH"
+        type="text"
+        placeholder="Add height here"
+      />
     </div>
   </body>
 </html>
