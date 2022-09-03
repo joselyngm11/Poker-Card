@@ -9,7 +9,6 @@ body {
   margin: auto;
   height: 300px;
   width: 300px;
-  padding: 20px;
   padding-top: 160px;
   border: 1px solid black;
   border-radius: 5px;
@@ -31,6 +30,7 @@ body {
   right: 20px;
   font-size: 80px;
   color: black;
+  transform: rotate(180deg);
 }
 
 .buttonClick {

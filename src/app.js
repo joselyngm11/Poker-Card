@@ -1,6 +1,18 @@
 /* eslint-disable */
 import "./style.css";
 
+let counter = 0;
+
+setInterval(() => {
+  if (counter == 10) {
+    changeCard();
+    counter = 0;
+  } else {
+    counter++;
+  }
+  document.getElementById("demo").innerHTML = counter;
+}, 1000);
+
 function changeCard() {
   function random_item(figura) {
     let random = figura[Math.floor(Math.random() * figura.length)];
@@ -37,6 +49,10 @@ function changeCard() {
     figBottom.style.color = "red";
     figTop.style.color = "red";
     figNumber.style.color = "red";
+  } else {
+    figBottom.style.color = "black";
+    figTop.style.color = "black";
+    figNumber.style.color = "black";
   }
 
   figBottom.innerHTML = actual;
@@ -51,25 +67,44 @@ window.onload = () => {
   //document.querySelector(".card").classList.add("spade");
   //}, 2000); // 2 segundos
 
-  let change = changeCard();
+  changeCard();
 };
 
 let button = document.querySelector("#superDuperButton");
 button.addEventListener("click", function() {
-  let change = changeCard();
+  changeCard();
+  clearInterval(interval);
+  setInterval(() => {
+    if (counter == 10) {
+      changeCard();
+      counter = 0;
+    } else {
+      counter++;
+    }
+    document.getElementById("demo").innerHTML = counter;
+  }, 1000);
 });
 
-let width = document.getElementById("addWidth");
-let height = document.getElementById("addHeight");
+let input = document.querySelectorAll("input");
 
-width.addEventListener("keydown", e => {
-  if (e.target.value.trim().length != 0 && e.key === "Enter") {
-    let newLi = document.createElement("li");
-    newLi.innerHTML = `<span><i class="fa fa-trash"></i></span> ${e.target.value}`;
-    newLi.addEventListener("click", e => {
-      newLi.parentNode.removeChild(newLi);
-    });
-    ul.appendChild(newLi);
-    e.target.value = " ";
+input.forEach(element => {
+  if (element.className == "casillaW") {
+    element.addEventListener("input", updateValue);
+  } else if (element.className == "casillaH") {
+    element.addEventListener("input", updateHeightValue);
   }
 });
+
+function updateValue(e) {
+  let widthC = document.getElementById("carta");
+  console.log(e.target.value);
+  let size = e.target.value + "px";
+  widthC.style.width = size;
+}
+
+function updateHeightValue(e) {
+  let heightC = document.getElementById("carta");
+  console.log(e.target.value);
+  let size = e.target.value + "px";
+  heightC.style.height = size;
+}
