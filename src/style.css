@@ -29,7 +29,7 @@ body {
   width: 350px;
 }
 
-.extra .buttonClick {
+.extra .boton {
   margin-left: 130px;
   margin-top: 10px;
   height: 60px;
@@ -40,19 +40,26 @@ body {
 
 .extra .casillaH {
   margin-left: 100px;
-  margin-top: 30px;
   margin-bottom: 30px;
   width: 200px;
 }
 
 .extra .casillaW {
   margin-left: 100px;
-  margin-top: 80px;
   width: 200px;
 }
 
 .extra .contador {
   text-align: center;
+  margin-top: 10px;
+}
+
+.extra .cont-label {
+  text-align: center;
   margin-top: 50px;
-  margin-left: 20px;
+  color: black;
+  font-size: 16px;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+  margin-bottom: 5px;
 }

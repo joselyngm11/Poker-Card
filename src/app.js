@@ -3,8 +3,9 @@ import "./style.css";
 
 let counter = 0;
 
-let interval = setInterval(() => {
-  if (counter == 10) {
+let interval;
+setInterval(() => {
+  if (counter == 5) {
     changeCard();
     counter = 0;
   } else {
@@ -66,7 +67,7 @@ button.addEventListener("click", function() {
   changeCard();
   clearInterval(interval);
   interval = setInterval(() => {
-    if (counter == 10) {
+    if (counter == 5) {
       changeCard();
       counter = 0;
     } else {
